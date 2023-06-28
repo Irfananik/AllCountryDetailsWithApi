@@ -20,7 +20,7 @@ const displayCountriesInfo = (getCountries) => {
         const getCountriesDiv = document.createElement('div')
         getCountriesDiv.classList.add('col')
         getCountriesDiv.innerHTML = `
-        <div class="bg-red-600 p-4 rounded-lg shadow-lg">
+        <div class="bg-red-500 p-4 rounded-lg shadow-lg">
             <img src="${getCountry.flags.png}" alt="">
             <h2 class="text-lg text-white font-bold mb-2">Name: ${getCountry.name.common}</h2>
             <p class="text-gray-300">Capital: ${getCountry.capital ? getCountry.capital : 'No exist'}</p>
