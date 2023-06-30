@@ -16,7 +16,7 @@ const loadCountriesInfo = () => {
 const displayCountriesInfo = (getCountries) => {
     const countriesContainer = document.getElementById('countries-container')
     getCountries.forEach(getCountry => {
-        console.log(getCountry)
+        //console.log(getCountry)
         const getCountriesDiv = document.createElement('div')
         getCountriesDiv.classList.add('col')
         getCountriesDiv.innerHTML = `
@@ -82,7 +82,7 @@ const loadCountryDetailsBySearchBox = (data) => {
         })
 }
 
-// button funcionality
+// search button funcionality
 const countryDetailsBySearchBox = () =>{
     const countryDetailsInputField = document.getElementById('country-details-input-field')
     const countryDetailsInputFieldText = countryDetailsInputField.value
