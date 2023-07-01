@@ -24,7 +24,7 @@ const displayCountriesInfo = (getCountries) => {
             <img src="${getCountry.flags.png}" alt="">
             <h2 class="text-lg text-white font-bold mb-2">Name: ${getCountry.name.common}</h2>
             
-            <button onclick="loadCountryDetails('${getCountry.cca2}')"
+            <button id="scroll-to-top" onclick="loadCountryDetails('${getCountry.cca2}')"
                 class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 focus:outline-none mt-4">Details</button>
             <button onclick="scrollToTop()"
                 class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 focus:outline-none mt-4"><i class="fa-solid fa-arrow-up"></i></i></button>
@@ -83,7 +83,7 @@ const loadCountryDetailsBySearchBox = (data) => {
 }
 
 // search button funcionality
-const countryDetailsBySearchBox = () =>{
+const countryDetailsBySearchBox = () => {
     const countryDetailsInputField = document.getElementById('country-details-input-field')
     const countryDetailsInputFieldText = countryDetailsInputField.value
     loadCountryDetailsBySearchBox(countryDetailsInputFieldText)
@@ -93,7 +93,7 @@ const countryDetailsBySearchBox = () =>{
 // Scroll to the top of the page function
 function scrollToTop() {
     window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
+        top: 0,
+        behavior: 'smooth'
+    })
+}
