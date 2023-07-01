@@ -22,6 +22,6 @@ Whether users seek a broad understanding of all countries or desire specific inf
 
 <br>
 
-* [Live site link](https://shoppingmickey.netlify.app/ "more info")
+* [Live site link](https://countriesdetailsbd.netlify.app/ "more info")
 
 ***Thank you so much for visiting my GitHub!***
