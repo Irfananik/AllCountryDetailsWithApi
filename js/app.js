@@ -12,6 +12,7 @@ const loadCountriesInfo = () => {
     });
 };
 
+
 // display countries data on card
 const displayCountriesInfo = (getCountries) => {
   const countriesContainer = document.getElementById("countries-container");
@@ -37,6 +38,7 @@ const displayCountriesInfo = (getCountries) => {
 
 loadCountriesInfo();
 
+
 //country details load
 const loadCountryDetails = (data) => {
   const url = `https://restcountries.com/v3.1/alpha?codes=${data}`;
@@ -50,6 +52,7 @@ const loadCountryDetails = (data) => {
     });
 };
 
+
 //display country details
 const displayCountryDetails = (getCountryDetails) => {
   const countryDetailsContainer = document.getElementById(
@@ -62,7 +65,7 @@ const displayCountryDetails = (getCountryDetails) => {
     <div class="bg-red-400 p-4 rounded-lg shadow-lg me-4">
         <img src="${getCountryDetails?.flags?.png ? getCountryDetails?.flags?.png : `https://i.ibb.co/bXwbhXX/error-not-found.jpg`}" alt="">
         <h2 class="text-lg text-white font-bold mb-2">Name: ${
-          getCountryDetails?.name?.common ? getCountryDetails?.name?.commo: "Not found"
+          getCountryDetails?.name?.common ? getCountryDetails?.name?.common: "Not found"
         }</h2>
         <p class="text-gray-300">Official Name: ${
           getCountryDetails?.name?.official ? getCountryDetails?.name?.official : "No exist / not found"
@@ -77,6 +80,7 @@ const displayCountryDetails = (getCountryDetails) => {
     </div>
     `;
   countryDetailsContainer.appendChild(getCountryDetailsDiv);
+  spinnrLoadingForSearch(false)
 };
 
 // data load and show by search box
@@ -92,8 +96,10 @@ const loadCountryDetailsBySearchBox = (data) => {
     });
 };
 
+
 // search button funcionality
 const countryDetailsBySearchBox = () => {
+  spinnrLoadingForSearch(true)
   const countryDetailsInputField = document.getElementById(
     "country-details-input-field"
   );
@@ -102,10 +108,21 @@ const countryDetailsBySearchBox = () => {
   countryDetailsInputField.value = "";
 };
 
+
 // Scroll to the top of the page function
 function scrollToTop() {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
+}
+
+// spinner function for search button
+const spinnrLoadingForSearch =(isLoading) =>{
+  const spinnerLoaderSection = document.getElementById('loading-spinner')
+  if(isLoading) {
+    spinnerLoaderSection.classList.remove('hidden')
+  }else{
+    spinnerLoaderSection.classList.add('hidden')
+  }
 }
