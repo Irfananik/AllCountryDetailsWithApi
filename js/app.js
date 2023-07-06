@@ -60,7 +60,7 @@ const displayCountryDetails = (getCountryDetails) => {
   getCountryDetailsDiv.classList.add("col");
   getCountryDetailsDiv.innerHTML = `
     <div class="bg-red-400 p-4 rounded-lg shadow-lg me-4">
-        <img src="${getCountryDetails?.flags?.png ? getCountryDetails?.flags?.png : ''}" alt="">
+        <img src="${getCountryDetails?.flags?.png ? getCountryDetails?.flags?.png : `https://i.ibb.co/bXwbhXX/error-not-found.jpg`}" alt="">
         <h2 class="text-lg text-white font-bold mb-2">Name: ${
           getCountryDetails?.name?.common ? getCountryDetails?.name?.commo: "Not found"
         }</h2>
