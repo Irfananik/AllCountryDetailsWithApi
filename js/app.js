@@ -83,6 +83,7 @@ const displayCountryDetails = (getCountryDetails) => {
   spinnrLoadingForSearch(false)
 };
 
+
 // data load and show by search box
 const loadCountryDetailsBySearchBox = (data) => {
   const url = `https://restcountries.com/v3.1/name/${data}`;
@@ -107,6 +108,14 @@ const countryDetailsBySearchBox = () => {
   loadCountryDetailsBySearchBox(countryDetailsInputFieldText);
   countryDetailsInputField.value = "";
 };
+
+
+// data search using enter keypress
+document.getElementById("country-details-input-field").addEventListener("keypress", (e) => {
+  if(e.key === "Enter") {
+    countryDetailsBySearchBox()
+  }
+})
 
 
 // Scroll to the top of the page function
