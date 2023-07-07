@@ -6,7 +6,9 @@ To delve deeper into a specific country, users can click on the "Details" button
 For user convenience, the website incorporates a convenient "Scroll-to-Top" button. By clicking on the upward arrow button, users can effortlessly return to the top of the page, facilitating smooth navigation throughout the site. <br>
 Additionally, the website includes a search feature that allows users to quickly find information about a particular country. Users can enter the name of the desired country in the search box, and the website will display relevant results, making it easy to access specific details. <br>
 Furthermore, the Country Details website values user feedback and encourages visitors to share their valuable comments and suggestions. The website provides a dedicated contact page with a responsive contact form. Users can provide their name, email address, and comments, helping to improve the user experience and engage in meaningful interactions. <br>
-Whether users seek a broad understanding of all countries or desire specific information about a particular nation, the Country Details website offers a user-friendly interface and a wealth of information to fulfill their needs. It aims to be a reliable and comprehensive resource for individuals interested in exploring the diverse world we live in.
+Whether users seek a broad understanding of all countries or desire specific information about a particular nation, the Country Details website offers a user-friendly interface and a wealth of information to fulfill their needs. It aims to be a reliable and comprehensive resource for individuals interested in exploring the diverse world we live in. <br>
+<br>
+Updated features: added a loading spinner when you click the search button and it's working until the data is retrieved. Added "Enter" keypress on search button. Not found card added when you search data on search box which is not available on this API.
 
 * [API's website Link which I used here](https://restcountries.com/ "more info")
 
