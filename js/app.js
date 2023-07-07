@@ -12,7 +12,6 @@ const loadCountriesInfo = () => {
     });
 };
 
-
 // display countries data on card
 const displayCountriesInfo = (getCountries) => {
   const countriesContainer = document.getElementById("countries-container");
@@ -38,7 +37,6 @@ const displayCountriesInfo = (getCountries) => {
 
 loadCountriesInfo();
 
-
 //country details load
 const loadCountryDetails = (data) => {
   const url = `https://restcountries.com/v3.1/alpha?codes=${data}`;
@@ -52,7 +50,6 @@ const loadCountryDetails = (data) => {
     });
 };
 
-
 //display country details
 const displayCountryDetails = (getCountryDetails) => {
   const countryDetailsContainer = document.getElementById(
@@ -63,26 +60,43 @@ const displayCountryDetails = (getCountryDetails) => {
   getCountryDetailsDiv.classList.add("col");
   getCountryDetailsDiv.innerHTML = `
     <div class="bg-red-400 p-4 rounded-lg shadow-lg me-4">
-        <img src="${getCountryDetails?.flags?.png ? getCountryDetails?.flags?.png : `https://i.ibb.co/bXwbhXX/error-not-found.jpg`}" alt="">
+        <img src="${
+          getCountryDetails?.flags?.png
+            ? getCountryDetails?.flags?.png
+            : `https://i.ibb.co/bXwbhXX/error-not-found.jpg`
+        }" alt="">
         <h2 class="text-lg text-white font-bold mb-2">Name: ${
-          getCountryDetails?.name?.common ? getCountryDetails?.name?.common: "Not found"
+          getCountryDetails?.name?.common
+            ? getCountryDetails?.name?.common
+            : "Not found"
         }</h2>
         <p class="text-gray-300">Official Name: ${
-          getCountryDetails?.name?.official ? getCountryDetails?.name?.official : "No exist / not found"
+          getCountryDetails?.name?.official
+            ? getCountryDetails?.name?.official
+            : "No exist / not found"
         }</p>
         <p class="text-gray-300">Capital: ${
-          getCountryDetails?.capital ? getCountryDetails?.capital : "No exist / not found"
+          getCountryDetails?.capital
+            ? getCountryDetails?.capital
+            : "No exist / not found"
         }</p>
-        <p class="text-gray-300">Region: ${getCountryDetails?.region ? getCountryDetails?.region : "No exist / not found"}</p>
+        <p class="text-gray-300">Region: ${
+          getCountryDetails?.region
+            ? getCountryDetails?.region
+            : "No exist / not found"
+        }</p>
         <p class="text-gray-300">independent Status: ${
-          getCountryDetails?.independent ? getCountryDetails?.independent : "No exist / not found"
+          getCountryDetails?.independent
+            ? getCountryDetails?.independent
+            : "No exist / not found"
         }</p>
+        <button onclick="reLoadPage()"
+                class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 focus:outline-none mt-4">Reload</button>
     </div>
     `;
   countryDetailsContainer.appendChild(getCountryDetailsDiv);
-  spinnrLoadingForSearch(false)
+  spinnrLoadingForSearch(false);
 };
-
 
 // data load and show by search box
 const loadCountryDetailsBySearchBox = (data) => {
@@ -97,10 +111,9 @@ const loadCountryDetailsBySearchBox = (data) => {
     });
 };
 
-
 // search button funcionality
 const countryDetailsBySearchBox = () => {
-  spinnrLoadingForSearch(true)
+  spinnrLoadingForSearch(true);
   const countryDetailsInputField = document.getElementById(
     "country-details-input-field"
   );
@@ -109,14 +122,14 @@ const countryDetailsBySearchBox = () => {
   countryDetailsInputField.value = "";
 };
 
-
 // data search using enter keypress
-document.getElementById("country-details-input-field").addEventListener("keypress", (e) => {
-  if(e.key === "Enter") {
-    countryDetailsBySearchBox()
-  }
-})
-
+document
+  .getElementById("country-details-input-field")
+  .addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      countryDetailsBySearchBox();
+    }
+  });
 
 // Scroll to the top of the page function
 function scrollToTop() {
@@ -127,11 +140,16 @@ function scrollToTop() {
 }
 
 // spinner function for search button
-const spinnrLoadingForSearch =(isLoading) =>{
-  const spinnerLoaderSection = document.getElementById('loading-spinner')
-  if(isLoading) {
-    spinnerLoaderSection.classList.remove('hidden')
-  }else{
-    spinnerLoaderSection.classList.add('hidden')
+const spinnrLoadingForSearch = (isLoading) => {
+  const spinnerLoaderSection = document.getElementById("loading-spinner");
+  if (isLoading) {
+    spinnerLoaderSection.classList.remove("hidden");
+  } else {
+    spinnerLoaderSection.classList.add("hidden");
   }
-}
+};
+
+// reload button on data details card
+const reLoadPage = () => {
+  location.reload();
+};
